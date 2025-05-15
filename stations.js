@@ -36,12 +36,38 @@ const stations = [
     name: 'Jens Griebel',
     lat: 49.60502176933786,
     lng: 8.173763751983644,
-    description: 'Beschreibung hinzufügen',
+    description:
+      'Modernes Familienweingut in dritter Generation mit Fokus auf regionaltypische Weine und nachhaltigem Anbau in den besten Lagen von Bockenheim.',
     offerings: [
       {
-        name: 'Angebot 1',
-        description: 'Beschreibung des Angebots',
-        price: '0,00€',
+        name: '2022 Silvaner trocken',
+        description:
+          'Charaktervoller Weißwein mit feiner Kräuternote und mineralischem Abgang',
+        price: '4,50€/Glas',
+      },
+      {
+        name: '2021 Grauburgunder "Kalkstein"',
+        description:
+          'Cremiger Weißwein mit Aromen von reifen Birnen und Haselnuss',
+        price: '5,00€/Glas',
+      },
+      {
+        name: '2020 Spätburgunder Reserve',
+        description:
+          'Eleganter Rotwein mit Noten von Kirsche und einer feinen Holznote',
+        price: '6,50€/Glas',
+      },
+      {
+        name: 'Pfälzer Saumagen',
+        description:
+          'Regionale Spezialität nach traditionellem Rezept der Familie Griebel',
+        price: '8,50€',
+      },
+      {
+        name: 'Winzerplatte',
+        description:
+          'Auswahl an hausgemachten Wurst- und Käsespezialitäten mit Bauernbrot',
+        price: '9,50€',
       },
     ],
   },
