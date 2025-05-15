@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --wine-red: #8e0000;
+  --blue: #66b5fe;
+  --orange: #fa670b;
+  --light-blue: #74b6ee;
+  --text-dark: #333;
+  --text-light: #fff;
+  --background-light: #f8f8f8;
+  --header-height: 60px;
+  --footer-height: 50px;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--wine-red);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: var(--header-height);
+  flex-shrink: 0;
+}
+
+#wpp-logo {
+  background-color: var(--blue);
+  border-radius: 50%;
+  padding: 3px;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+header p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.9;
+  line-height: 1.2;
+}
+
+main {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Locate Me Button */
+#locate-me {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  z-index: 2;
+  width: 75px;
+  height: 75px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 36px;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+#locate-me:hover {
+  background-color: #f0f0f0;
+}
+
+#locate-me.active {
+  background-color: var(--wine-red);
+  color: white;
+}
+
+/* Station Info Panel */
+#station-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 1.5rem;
+  padding-top: 2rem;
+  border-top: 4px solid var(--wine-red);
+  max-height: 60%;
+  overflow-y: auto;
+  z-index: 900;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#station-info.hidden {
+  transform: translateY(calc(100% - 30px));
+}
+
+#station-info.hidden #toggle-info {
+  transform: translateX(-50%);
+}
+
+#close-info {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--wine-red);
+}
+
+#station-title {
+  margin-bottom: 1rem;
+  color: var(--wine-red);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Toggle Button */
+#toggle-info {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 30px;
+  background-color: var(--wine-red);
+  color: white;
+  border: none;
+  border-radius: 15px 15px 0 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+#toggle-info i {
+  font-size: 18px;
+  display: block;
+  color: white;
+}
+
+#toggle-info.active {
+  transform: translateX(-50%) rotate(180deg);
+  border-radius: 15px 15px 0 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--wine-red);
+  color: var(--text-light);
+  height: var(--footer-height);
+  flex-shrink: 0;
+}
+
+footer a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--light-blue);
+}
+
+.menu-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item h3 {
+  color: var(--wine-red);
+  margin-bottom: 0.5rem;
+}
+
+.menu-item .price {
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.station-description {
+  border-left: 3px solid var(--blue);
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  header p {
+    font-size: 0.8rem;
+  }
+
+  #wpp-logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+
+  #station-info {
+    max-height: 70%;
+  }
+}

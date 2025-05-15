@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeinPerPedes - Bockenheim/Kindenheim</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="wppLogo.svg" id="wpp-logo" alt="WeinPerPedes Logo" />
+      <div class="header-text">
+        <h1>WeinPerPedes</h1>
+        <p>Eine Weinwandertag durch Bockenheim/Kindenheim</p>
+      </div>
+    </header>
+
+    <main>
+      <div id="map"></div>
+      <button id="locate-me" title="Zeige meinen Standort">
+        <i class="fas fa-location-crosshairs"></i>
+      </button>
+
+      <div id="station-info" class="hidden">
+        <button id="toggle-info">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+        <button id="close-info">×</button>
+        <h2 id="station-title">Station Name</h2>
+        <div id="station-content">
+          <p>Station details will appear here</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 WeinPerPedes -
+        <a href="https://www.lmf.logge.top">LMF</a>
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="stations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
